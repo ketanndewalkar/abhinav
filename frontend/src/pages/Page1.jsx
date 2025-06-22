@@ -67,7 +67,7 @@ const Page1 = () => {
       setstatus(res.status)
       setloader(false);
       setpopshow(true);
-      // resetform();
+      resetform();
     } catch (error) {
       console.error("Error:", error);
       setloader(false);
