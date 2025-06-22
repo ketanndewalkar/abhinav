@@ -31,6 +31,14 @@ body,html{
 }
 
 @media (min-width: 100px) and (max-width: 700px) {
+  .niche{
+    margin-top: 0;
+    width:2.5vw;
+    height:2.5vw;
+  }
+  .chal{
+    font-size:3.1vw
+  }
   nav{
     height:15vw;
   }
@@ -483,6 +491,15 @@ body,html{
 
 /* Tablet: 600px ≤ width < 1180px */
 @media (min-width: 600px) and (max-width: 945px) {
+  .niche{
+    margin-top: 0;
+    width:2.6vw;
+    height:2.6vw;
+  }
+  .chal{
+    font-size:3.1vw;
+    align-items: center;
+  }
   .login10{
   height:100dvh;
   padding:0;

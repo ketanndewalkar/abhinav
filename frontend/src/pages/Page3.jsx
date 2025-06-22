@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '../components/Card';
 
 const Page3 = () => {
@@ -40,6 +40,9 @@ const Page3 = () => {
       price: 145,
     }
   ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="w-dvw pt-[13vh] relative h-fit page2">
           <div className="size-full p-[1vw] page21">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import Loader from "../components/loader";
 
@@ -75,7 +75,9 @@ const Page1 = () => {
       setpopshow(true);
     }
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="w-dvw h-fit pt-[13vh] relative page2 page1">
       <div className="size-full p-[2vw] page11">

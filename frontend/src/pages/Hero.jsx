@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import globe from "../../public/globe.png"; // Adjust path if needed
 import tiolet from "../../public/toilet.png";
 import { useGSAP } from "@gsap/react";
@@ -50,7 +50,9 @@ const Hero = () => {
       }
     );
   }, []);
-
+  useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className="hero w-dvw h-fit pb-[5vw] bg-black relative flex flex-col items-center justify-center overflow-hidden">
       <img
@@ -79,7 +81,7 @@ const Hero = () => {
             >
               {[0,1,2].map((ele,index)=>(
                 <>
-                <li className={`text-[1.2vw] font-semibold bg-gray-600 hover:bg-gray-400 size-5 hover:w-8 hover:cursor-pointer transition-all duration-700 rounded-sm ${index===current?"w-8 bg-gray-400 ":""}`} onClick={()=>setcurrent(index)}></li>
+                <li className={`text-[1.2vw] font-semibold bg-gray-600 hover:bg-gray-400 size-5 hover:cursor-pointer transition-all duration-700 rounded-sm ${index===current?"w-8":""}`} onClick={()=>setcurrent(index)}></li>
                 </>
               ))}
             </ul>
