@@ -1,0 +1,2 @@
+EMAIL=abhinavtradex5@gmail.com
+APP_PASSWORD=qmjblvwsrmtpiubg
