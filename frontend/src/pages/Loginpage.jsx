@@ -199,7 +199,7 @@ const Loginpage = () => {
               </label>
               <label
                 htmlFor="show"
-                className="mt-[0.5vw] login112142 flex gap-[0.5vw] hover:cursor-pointer w-fit"
+                className="mt-[0.5vw] login112142 flex gap-[0.5vw] hover:cursor-pointer w-fit items-center"
               >
                 <input
                   type="checkbox"
@@ -256,7 +256,8 @@ const Loginpage = () => {
           </div>
         </div>
         <div className="w-1/2 h-full flex items-center bg-[#fcfcfc] login113 px-[2vw]">
-          <img src="loginimage.png" className="" />
+          {/* <img src="loginimage.png" className="" /> */}
+          <img src="security.png" className="" />
         </div>
       </div>
       <div className="size-full absolute top-0 left-0 bg-black opacity-30 z-99 login11"></div>

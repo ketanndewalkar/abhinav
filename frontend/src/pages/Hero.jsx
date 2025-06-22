@@ -1,10 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import globe from "../../public/globe.png"; // Adjust path if needed
 import tiolet from "../../public/toilet.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Hero = () => {
+  const [current, setcurrent] = useState(0)
+  const titles = [
+  "High-Quality and Cost-Effective Paper for Commercial Use",
+  "Thermal Paper Roll Carbon Less Paper Roll Manufacturer",
+  "Carbon Less Paper Roll Manufacturer"
+];
   const heading1 = useRef(null);
   const heading2 = useRef(null);
   const sideimageRef = useRef(null);
@@ -43,7 +49,6 @@ const Hero = () => {
         stagger: 0.2,
       }
     );
-    
   }, []);
 
   return (
@@ -58,7 +63,11 @@ const Hero = () => {
         className="side-image absolute top-[6vw] w-[30%] h-[calc(100dvh-13vh)] right-0 bg-gray-100 flex items-center justify-center opacity-100"
         ref={sideimageRef}
       >
-        <img src={tiolet} className="object-center object-cover h-full" alt="tiolet" />
+        <img
+          src={tiolet}
+          className="object-center object-cover h-full"
+          alt="tiolet"
+        />
       </div>
 
       <div className="text-white z-30 relative pt-[13vh] flex items-center w-dvw h-dvh">
@@ -68,9 +77,11 @@ const Hero = () => {
               className="flex flex-col gap-[3vw] items-end justify-center h-full"
               ref={slideRef}
             >
-              <li className="text-[1.2vw] font-semibold bg-gray-600 hover:bg-gray-400 size-5 hover:w-8 hover:cursor-pointer transition-all duration-700 rounded-sm"></li>
-              <li className="text-[1.2vw] font-semibold bg-gray-600 hover:bg-gray-400 size-5 hover:w-8 hover:cursor-pointer transition-all duration-700 rounded-sm"></li>
-              <li className="text-[1.2vw] font-semibold bg-gray-600 hover:bg-gray-400 size-5 hover:w-8 hover:cursor-pointer transition-all duration-700 rounded-sm"></li>
+              {[0,1,2].map((ele,index)=>(
+                <>
+                <li className={`text-[1.2vw] font-semibold bg-gray-600 hover:bg-gray-400 size-5 hover:w-8 hover:cursor-pointer transition-all duration-700 rounded-sm ${index===current?"w-8 bg-gray-400 ":""}`} onClick={()=>setcurrent(index)}></li>
+                </>
+              ))}
             </ul>
           </div>
 
@@ -88,8 +99,11 @@ const Hero = () => {
               )}
             </h1>
 
-            <h1 className="text-[4vw] font-bold mt-8 mr-5 leading-18" ref={heading2}>
-              High-Quality and Cost-Effective Paper for Commercial Use.
+            <h1
+              className="text-[4vw] font-bold mt-8 mr-5 leading-18"
+              ref={heading2}
+            >
+              {titles[current]}
             </h1>
 
             <p className="w-[80%] mt-10 text-gray-400">
@@ -100,17 +114,17 @@ const Hero = () => {
               we ensure reliable and market-ready deliveries.
             </p>
 
-            
-            <button className="rounded-md px-6 py-2 w-fit bg-red-700 font-bold text-[1.1vw] mt-13 hover:cursor-pointer hover:scale-105 active:scale-95 transition-transform duration-300 ease-in-out" onClick={function () {
-  const heroSection = document.getElementById("hero2");
-  if (heroSection) {
-    heroSection.scrollIntoView({ behavior: "smooth" });
-  }
-}
-}>
+            <button
+              className="rounded-md px-6 py-2 w-fit bg-red-700 font-bold text-[1.1vw] mt-13 hover:cursor-pointer hover:scale-105 active:scale-95 transition-transform duration-300 ease-in-out"
+              onClick={function () {
+                const heroSection = document.getElementById("hero2");
+                if (heroSection) {
+                  heroSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               Learn More
             </button>
-            
           </div>
         </div>
       </div>
