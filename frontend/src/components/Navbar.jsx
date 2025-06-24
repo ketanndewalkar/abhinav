@@ -65,7 +65,7 @@ const Navbar = () => {
     <div className="w-dvw dk:h-[13vh] fixed bg-white z-50">
       <nav className="w-full h-full flex items-center justify-between px-5">
         <Link to="/" className="h-full ml-5 flex items-center nav1">
-          <img src="logo1.png" className="h-[90%] w-fit" alt="Logo" />
+          <img src="logo.jpg" className="h-[90%] w-auto" alt="Logo" />
         </Link>
 
         <div
